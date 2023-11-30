@@ -9,6 +9,7 @@ import {   BrowserRouter as Router,
   Routes,
   BrowserRouter,
   Navigate,} from 'react-router-dom'
+import Dashboard from './Pages/Dashboard/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,7 @@ function App() {
     <Routes>
     <Route path="/" element={  <Login/>} />
     <Route path="/signup" element={  <SignUp/>} />
-    
+    <Route path="/dashboard" element={  <Dashboard/>} />
     </Routes>
     
     </BrowserRouter>

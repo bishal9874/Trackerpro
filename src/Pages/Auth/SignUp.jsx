@@ -1,17 +1,33 @@
 
 import { TextField, Box, Button, Typography, CircularProgress } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import PasswordPros from '../Components/PasswordPros';
 import './Signup.css'; 
 const SignUp = () => {
+  const [values,setValues]=useState({
+    name:"",
+    email:"",
+    pass:"",
+  });
+
   return (
     <div className="l_main">
     <div className="flexCenter signup_container innerWidth">
       <img src="src/assets/trackproLogo.png" alt="" width={250} />
       <Box component="form">
         <div className="inputs_container">
-          <TextField id="fullName" name="fullName" label="Full Name" variant="outlined" margin="normal" />
+          <TextField id="fullName" name="fullName" label="Full Name" variant="outlined" margin="normal" onChange={(event) =>
+            setValues((prev) => ({ ...prev, name: event.target.value }))
+          } />
           <TextField id="email" name="email" label="Email" variant="outlined" margin="normal" />
-          <TextField id="password" name="password" label="Password" type="password" variant="outlined" margin="normal" />
+          <PasswordPros
+              id="password"
+              name="password"
+              label="Password"
+              type="password"
+              variant="outlined"
+              margin="normal"
+            />
         </div>
         <div className="flexCenter signup_button_section">
           <button type="submit" className="signup_button">
