@@ -48,7 +48,7 @@ h3 {
 
 .login_butto_section {
   display: flex;
-  flex: row;
+  flex-direction: row;
   gap: 2rem;
   justify-content: center; /* Center the buttons horizontally */
   margin-top: 10px;
